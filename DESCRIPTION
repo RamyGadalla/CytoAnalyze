@@ -1,0 +1,58 @@
+Package: CytoAnalyze
+Title: Cytometry data analysis pipeline
+Version: 1.0.0
+Author: Ramy Gadalla <gadallaramy@gmail.com>
+maintainer: Ramy Gadalla <gadallaramy@gmail.com>
+Description: Statistical analysis and visualization tools for cytometry data
+biocViews:
+    Proteomics,
+    SingleCell,
+    MassCytometry,
+    CyTOF,
+    FlowCytometry,
+    Immunology,
+    ImmunoOncology,
+    CellBiology
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports: spade, 
+         corrplot, 
+         tidyr, 
+         magrittr, 
+         Hmisc, 
+         tools, 
+         S4Vectors, 
+         stringi, 
+         CytoGLMM, 
+         diffcyt, 
+         bluster, 
+         tibble, 
+         BiocParallel, 
+         SummarizedExperiment, 
+         patchwork, 
+         igraph, 
+         parallel, 
+         Rphenograph, 
+         umap, 
+         ggrastr, 
+         Polychrome, 
+         viridis,
+         cyCombine,
+         pheatmap, 
+         RColorBrewer, 
+         ggplot2, 
+         dplyr, 
+         Biobase, 
+         rlang, 
+         limma, 
+         MatrixGenerics, 
+         ggridges, 
+         flowCore, 
+         methods
+Depends: R (>= 4.2.0)
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+Suggests: 
+    knitr,
+    rmarkdown
