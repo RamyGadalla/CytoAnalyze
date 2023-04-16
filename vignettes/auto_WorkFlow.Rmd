@@ -1,19 +1,4 @@
----
-title: "CytoAnalyze"
-author: "Ramy Gadalla"
-output:
-  html_document:
-    df_print: paged
-  pdf_document: default
-vignette: "%\\VignetteIndexEntry{CytoAnalyze} %\\VignetteEncoding{UTF-8} %\\VignetteEngine{knitr::knitr}\n"
-header-includes:
- \usepackage{float}
- \floatplacement{figure}{H}
----
-
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
-#knitr::opts_knit$set(root.dir = "~/Data/png")
+knitr::opts_knit$set(root.dir = "~/Data/png")
 ```
 
 This vignette demonstrates the processing steps of cytometry data using the workflow in <mark style="background-color: #eaeaea">CytoAnalyze</mark> package.  
