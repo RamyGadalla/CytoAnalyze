@@ -6,7 +6,7 @@ The CytoAnalyze package is an analysis pipeline for single-cell cytometry data. 
 
 ## Summary
 
-The package includes several functions to perform different analysis tasks, and one wrapper function to streamline all the required analysis steps. For the workflow demonstration, please download [the workflow vignette](doc).
+The package includes several functions to perform different analysis tasks, and one wrapper function to streamline all the required analysis steps. For the workflow demonstration, please see [the workflow vignette](doc/CytoAnalyze.html).
 
 ## Installation
 
