@@ -68,8 +68,8 @@ plot_stainQC(input_folder = "~/Data/CytoAnalyze_results/ArcsinTrans", #arcsin tr
 Stacked histograms of all channels in the data are plotted and exported to the specified location. We are showing here only CD57 and Helios.
 
 ```{r 'stainQC plots', echo=FALSE, fig.show="hold", fig.cap ="Staining quality control", out.height="50%", fig.pos='H', fig.align='center'}
-knitr::include_graphics("~/Data/png/CD57staining_QC.jpg")
-knitr::include_graphics("~/Data/png/Heliosstaining_QC.jpg")
+knitr::include_graphics("~/Data/png/CD57staining_QC.png")
+knitr::include_graphics("~/Data/png/Heliosstaining_QC.png")
 ```
 
 
