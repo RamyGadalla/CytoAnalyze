@@ -1,15 +1,12 @@
 ---
-title: "CytoAnalyze"
-author: "Ramy Gadalla"
+title: "R Notebook"
 output:
   html_document:
     df_print: paged
-  pdf_document: default
 vignette: "%\\VignetteIndexEntry{CytoAnalyze} %\\VignetteEncoding{UTF-8} %\\VignetteEngine{knitr::knitr}\n"
-header-includes:
- \usepackage{float}
- \floatplacement{figure}{H}
+header-includes: \usepackage{float} \floatplacement{figure}{H}
 ---
+
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
