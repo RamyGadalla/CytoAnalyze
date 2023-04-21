@@ -25,6 +25,7 @@ library(CytoAnalyze)
 
 ```
 
+![CD3]("~/Data/png/X153Eu_CD3.EQ__histogram.png")
 
 
 For the demonstration of the functions of <mark style="background-color: #eaeaea">CytoAnalyze</mark> package, data from *Gadalla et al* 2019 is used here. 
