@@ -25,7 +25,7 @@ library(CytoAnalyze)
 
 ```
 
-![CD3]("~/Data/png/X153Eu_CD3.EQ__histogram.png")
+
 
 
 For the demonstration of the functions of <mark style="background-color: #eaeaea">CytoAnalyze</mark> package, data from *Gadalla et al* 2019 is used here. 
@@ -46,6 +46,9 @@ arcsin_trans(input_folder = input_folder <- "~/Data/clean_fcs",
 ```
 
 Transformed FCS files are exported to the specified output location, with histograms of one randomly selected file to show plot all the channels before and after transformation. Here only CD3 and CD28 are shown before and after transformation. You can always go back and try different cofactor value of arcsin transformation if transformation does not result in satisfactory resolution.
+
+
+![CD3](~/Data/png/X153Eu_CD3.EQ__histogram.png)
 
 
 ```{r 'transformation plots', echo=FALSE, fig.show="hold", fig.cap ="Before and after data transformation", out.height="50%", fig.pos='H', fig.align='center'}
