@@ -25,12 +25,12 @@ library(CytoAnalyze)
 ```
 
 
+
+
 ![CD3](/Users/ramygadalla/Data/png/X153Eu_CD3.EQ__histogram.png)
 
 
-```{r}
-getwd()
-```
+
 
 
 For the demonstration of the functions of <mark style="background-color: #eaeaea">CytoAnalyze</mark> package, data from *Gadalla et al* 2019 is used here. 
