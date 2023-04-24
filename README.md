@@ -10,7 +10,7 @@ The package includes several functions to perform different analysis tasks, and 
 
 ## Installation
 
-``` {r }
+```r 
 
 if(!require(devtools)) {
   install.packages("devtools")
