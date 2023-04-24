@@ -10,13 +10,12 @@ The package includes several functions to perform different analysis tasks, and 
 
 ## Installation
 
-```
+``` {r }
 if(!require(devtools)) {
   install.packages("devtools")
 }
 
 devtools::install_github("RamyGadalla/CytoAnalyze")
-
 ```
 
 ## Usage
