@@ -1,0 +1,546 @@
+package:
+- abind
+- askpass
+- backports
+- base64enc
+- beeswarm
+- bigmemory
+- bigmemory.sri
+- Biobase
+- BiocGenerics
+- BiocNeighbors
+- BiocParallel
+- bitops
+- bluster
+- boot
+- broom
+- car
+- carData
+- caret
+- checkmate
+- circlize
+- class
+- cli
+- clue
+- cluster
+- codetools
+- colorRamps
+- colorspace
+- ComplexHeatmap
+- ConsensusClusterPlus
+- cowplot
+- crayon
+- cyCombine
+- CytoAnalyze
+- CytoGLMM
+- cytolib
+- data.table
+- DelayedArray
+- deldir
+- diffcyt
+- digest
+- doParallel
+- dplyr
+- edgeR
+- evaluate
+- factoextra
+- fansi
+- farver
+- fastmap
+- flexmix
+- flowCore
+- FlowSOM
+- foreach
+- foreign
+- Formula
+- fs
+- future
+- future.apply
+- generics
+- GenomeInfoDb
+- GenomeInfoDbData
+- GenomicRanges
+- GetoptLong
+- ggbeeswarm
+- ggforce
+- ggnewscale
+- ggplot2
+- ggpubr
+- ggrastr
+- ggrepel
+- ggridges
+- ggsignif
+- GlobalOptions
+- globals
+- glue
+- gower
+- gridExtra
+- gtable
+- hardhat
+- Hmisc
+- htmlTable
+- htmltools
+- htmlwidgets
+- igraph
+- interp
+- ipred
+- IRanges
+- iterators
+- jpeg
+- jsonlite
+- knitr
+- lattice
+- latticeExtra
+- lava
+- lifecycle
+- limma
+- listenv
+- lme4
+- locfit
+- logging
+- lubridate
+- magrittr
+- MASS
+- Matrix
+- MatrixGenerics
+- matrixStats
+- mbest
+- minqa
+- ModelMetrics
+- modeltools
+- multcomp
+- munsell
+- mvtnorm
+- nlme
+- nloptr
+- nnet
+- openssl
+- parallelly
+- patchwork
+- pheatmap
+- pillar
+- pkgconfig
+- plyr
+- png
+- Polychrome
+- polyclip
+- pROC
+- prodlim
+- purrr
+- R6
+- RANN
+- RColorBrewer
+- Rcpp
+- RCurl
+- recipes
+- reshape2
+- reticulate
+- rjson
+- rlang
+- rmarkdown
+- rpart
+- Rphenograph
+- RProtoBufLib
+- RSpectra
+- rstatix
+- rstudioapi
+- Rtsne
+- S4Vectors
+- sandwich
+- scales
+- scatterplot3d
+- sessioninfo
+- shape
+- spade
+- speedglm
+- stringi
+- stringr
+- strucchange
+- SummarizedExperiment
+- survival
+- TH.data
+- tibble
+- tidyr
+- tidyselect
+- timechange
+- timeDate
+- tweenr
+- umap
+- usethis
+- utf8
+- uuid
+- vctrs
+- vipor
+- viridis
+- viridisLite
+- withr
+- xfun
+- XML
+- XVector
+- yaml
+- zlibbioc
+- zoo
+loadedversion:
+- 1.4-5
+- '1.1'
+- 1.4.1
+- 0.1-3
+- 0.4.0
+- 4.6.1
+- 0.1.6
+- 2.58.0
+- 0.44.0
+- 1.16.0
+- 1.32.5
+- 1.0-7
+- 1.8.0
+- 1.3-28.1
+- 1.0.3
+- 3.1-1
+- 3.0-5
+- 6.0-93
+- 2.1.0
+- 0.4.15
+- 7.3-21
+- 3.6.0
+- 0.3-64
+- 2.1.4
+- 0.2-19
+- 2.3.1
+- 2.1-0
+- 2.14.0
+- 1.62.0
+- 1.1.1
+- 1.5.2
+- 0.2.15
+- 1.0.0
+- 1.6.0
+- 2.10.1
+- 1.14.8
+- 0.24.0
+- 1.0-6
+- 1.18.0
+- 0.6.31
+- 1.0.17
+- 1.1.0
+- 3.40.2
+- '0.20'
+- 1.0.7
+- 1.0.4
+- 2.1.1
+- 1.1.1
+- 2.3-18
+- 2.10.0
+- 2.6.0
+- 1.5.2
+- 0.8-84
+- 1.2-5
+- 1.6.1
+- 1.31.0
+- 1.10.0
+- 0.1.3
+- 1.34.9
+- 1.2.9
+- 1.50.2
+- 1.0.5
+- 0.7.1
+- 0.4.1
+- 0.4.8
+- 3.4.1
+- 0.6.0
+- 1.0.1
+- 0.9.3
+- 0.5.4
+- 0.6.4
+- 0.1.2
+- 0.16.2
+- 1.6.2
+- 1.0.1
+- '2.3'
+- 0.3.1
+- 1.2.0
+- 4.8-0
+- 2.4.1
+- 0.5.4
+- 1.6.1
+- 1.4.1
+- 1.1-3
+- 0.9-13
+- 2.32.0
+- 1.0.14
+- 0.1-10
+- 1.8.4
+- '1.42'
+- 0.20-45
+- 0.6-30
+- 1.7.2.1
+- 1.0.3
+- 3.54.2
+- 0.9.0
+- 1.1-31
+- 1.5-9.7
+- 0.10-108
+- 1.9.2
+- 2.0.3
+- 7.3-58.2
+- 1.5-3
+- 1.10.0
+- 0.63.0
+- '0.6'
+- 1.2.5
+- 1.2.2.2
+- 0.2-23
+- 1.4-22
+- 0.5.0
+- 1.1-3
+- 3.1-162
+- 2.0.3
+- 7.3-18
+- 2.0.5
+- 1.34.0
+- 1.1.2
+- 1.0.12
+- 1.8.1
+- 2.0.3
+- 1.8.8
+- 0.1-8
+- 1.5.1
+- 1.10-4
+- 1.18.0
+- 2019.11.13
+- 1.0.1
+- 2.5.1
+- 2.6.1
+- 1.1-3
+- 1.0.10
+- 1.98-1.10
+- 1.0.5
+- 1.4.4
+- '1.28'
+- 0.2.21
+- 1.1.0
+- '2.20'
+- 4.1.19
+- 0.99.1.9003
+- 2.7.4
+- 0.16-1
+- 0.7.2
+- '0.14'
+- '0.16'
+- 0.36.2
+- 3.0-2
+- 1.2.1
+- 0.3-42
+- 1.2.2
+- 1.4.6
+- 1.10.4
+- 0.3-4
+- 1.7.12
+- 1.5.0
+- 1.5-3
+- 1.28.0
+- 3.5-3
+- 1.1-1
+- 3.2.0
+- 1.3.0
+- 1.2.0
+- 0.2.0
+- '4022.108'
+- 2.0.2
+- 0.2.10.0
+- 2.1.6
+- 1.2.3
+- 1.1-0
+- 0.5.2
+- 0.4.5
+- 0.6.2
+- 0.4.1
+- 2.5.0
+- '0.37'
+- 3.99-0.13
+- 0.38.0
+- 2.3.7
+- 1.44.0
+- 1.8-11
+source:
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- Bioconductor
+- Bioconductor
+- Bioconductor
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.1)
+- Github (biosurf/cyCombine@58f4dc5771e2fdb85a8b5675ef68ce9101d8b7c5)
+- Github (RamyGadalla/CytoAnalyze@7da39ce2c51fe71147e9a288a05f5748bac3d9f7)
+- Bioconductor
+- Bioconductor
+- CRAN (R 4.2.1)
+- Bioconductor
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- Bioconductor
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.1)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.1)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Github (i-cyto/Rphenograph@86ceedeb2c41ecb98b1b2a7c980d91f66fa62e6c)
+- Github (RGLab/RProtoBufLib@c362a5210e45ddd58d74b942b386fee0bcc76b17)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Github (nolanlab/spade@356955fa45b323b451952f0f2c4c125a47d0d6d1)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
+- Bioconductor
+- CRAN (R 4.2.0)
