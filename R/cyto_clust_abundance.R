@@ -20,7 +20,7 @@
 #' @import ggplot2
 #'
 #' @return
-#' A table (csv file) with log fold change and statistical values for the comparison between the two contrasting groups using edgeR.
+#' A table (csv file) with log fold change and statistical values for the comparison between the two contrasting groups using edgeR. Also, the function outputs a column plot of the log-fold changes of clusters between groups.
 #'
 #'
 #' @seealso \href{https://github.com/lmweber/diffcyt}{diffcyt}, \href{https://bioconductor.org/packages/release/bioc/html/edgeR.html}{edgeR}
