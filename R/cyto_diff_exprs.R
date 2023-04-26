@@ -172,7 +172,7 @@ cyto_diff_exprs <- function(SE,
 
     message("The GLM formula used is:\n", glm_fit$formula_str)
 
-    message("\033[31mNote: ", i, " clusters were lower than the count threshold and excluded out of the analysis.\033[0m")
+    message("\033[31mNote: ", i, " cluster(s) were lower than the count threshold and excluded out of the analysis.\033[0m")
 
     write.csv(coeff_table, row.names = FALSE, file.path(output_folder,"stats", "Differential expression", "coeff_table_unpaired.csv"))
 
@@ -263,7 +263,7 @@ cyto_diff_exprs <- function(SE,
       }
     }
 
-    message("\033[31mNote: ", i, " clusters were lower than the count threshold and excluded out of the analysis.\033[0m")
+    message("\033[31mNote: ", i, " cluster(s) were lower than the count threshold and excluded out of the analysis.\033[0m")
 
     write.csv(coeff_table, row.names = FALSE, file.path(output_folder,"stats", "Differential expression", "coeff_table_paired.csv"))
 
