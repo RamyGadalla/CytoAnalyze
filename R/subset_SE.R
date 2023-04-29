@@ -17,6 +17,7 @@
 #' @export
 #'
 #'
+
 subset_SE <- function (SE,
                        group,
                        no_keep,
@@ -89,8 +90,8 @@ if (!is.null(keep) & is.null(no_keep)) {
 }
 
 
-#drop_levels
-# have to loop here over all columns in rowdata that are factors
+#drop unused levels
+
 
 factor_cols <- colnames(rowData(SE)[,sapply(rowData(SE), is.factor)])
 
