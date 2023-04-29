@@ -27,7 +27,7 @@ cyto_clust_abundance(
 \item{output_folder}{Path to folder to receive pdf file of the plots and tables.}
 }
 \value{
-A table (csv file) with log fold change and statistical values for the comparison between the two contrasting groups using edgeR.
+A table (csv file) with log fold change and statistical values for the comparison between the two contrasting groups using edgeR. Also, the function outputs a column plot of the log-fold changes of clusters between groups.
 }
 \description{
 Performs differential abundance test for cell clusters of single-cell cytometry data using edgeR test.

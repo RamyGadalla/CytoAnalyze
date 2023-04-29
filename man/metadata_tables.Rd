@@ -17,6 +17,8 @@ during the data acquisition. If not sure, leave it to the default value.}
 }
 \value{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{           csv files exported to output_folder.
+                   Analyst are required to fill these tables. For marker_info table, column $marker_class should have only one of the three values c("none", "type", "state), and column
+                   $channel_type should only have one of the values c("biological', "non_biological"). Failure to do that will cause errors downsteam.
 }\if{html}{\out{</div>}}
 }
 \description{

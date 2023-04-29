@@ -18,10 +18,12 @@ cyto_workflow(
   n = 15,
   assay_name = "exprs",
   plot_clusters = TRUE,
+  DS = 5000,
   groups = NULL,
   filter = NULL,
   exp_subject = "sample_id",
   plot_samples_prop = TRUE,
+  samples = "donor_id",
   plot_clusters_violin = TRUE,
   plot_cluster_corr = TRUE,
   plot_cluster_colsPie = TRUE,
@@ -66,13 +68,17 @@ define and evaluate markers that needs batch correction.}
 
 \item{plot_clusters}{Logical. If TRUE, \code{\link{cyto_umap}} is called to plot phenograph clusters on umap axes.}
 
+\item{DS}{Integer. Specifies the number of cell to downsample to for the umap plots. If groups are provided, this number will be used to downsample from each group.}
+
 \item{groups}{Character vector specifying the experimental group e.g c("control, "treated").}
 
 \item{filter}{A character vector of all the levels in 'groups' that need to be filtered out of the analysis. Default is NULL.}
 
 \item{exp_subject}{Character vector specifying the experimental subject e.g c("mouse1", "mouse2").}
 
-\item{plot_samples_prop}{Logical. If TRUE, \code{\link{cyto_samples_barplot}} is called to plot cluster proportion in each sample in "sample_id"}
+\item{plot_samples_prop}{Logical. If TRUE, \code{\link{cyto_samples_barplot}} is called to plot cluster proportion in each sample in "sample_id".}
+
+\item{samples}{Character. Represents the column name in the metadata to plot the sample barplot for.}
 
 \item{plot_clusters_violin}{Logical. If TRUE, \code{\link{cyto_clust_violin}} is called to plot marker intensity per cluster.}
 

@@ -15,6 +15,8 @@ cyto_samples_barplot(SE, samples = "sample_id", output_folder = ".")
 }
 \value{
 stacked columns plot for cluster proportions within all samples in the dataset.
+
+Barplot for cluster proportions in each sample in the data, and csv file with this data.
 }
 \description{
 Plot a stacked columns plot for the proportion of clusters in each sample in clustered cytometry data.
