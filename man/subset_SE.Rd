@@ -4,7 +4,15 @@
 \alias{subset_SE}
 \title{Subsetting SummarizedExperiment}
 \usage{
-subset_SE(SE, group, no_keep, keep = NULL, output_folder, SE_name)
+subset_SE(
+  SE,
+  group,
+  no_keep = NULL,
+  keep = NULL,
+  output_folder,
+  SE_name,
+  rm_na = TRUE
+)
 }
 \arguments{
 \item{SE}{\code{SummarizedExperiment} object or path to \code{SummarizedExperiment} object.}
@@ -18,6 +26,8 @@ subset_SE(SE, group, no_keep, keep = NULL, output_folder, SE_name)
 \item{output_folder}{Path of output directory to recieve the subsetted SummarizedExperiment.}
 
 \item{SE_name}{Name of the new subsetted SummarizedExperiment.}
+
+\item{rm_na}{Remove NA values.}
 }
 \value{
 SummarizedExperiment

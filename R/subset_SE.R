@@ -86,7 +86,7 @@ if (!is.null(keep) & !is.null(no_keep)) {
 
   for (level in keep) {
 
-    SE <- SE[rowData(SE)[,group] == level,]
+    SE_temp <- SE[rowData(SE)[,group] == level,]
     SE_F <- rbind(SE,SE_F)
 
   }
@@ -98,7 +98,7 @@ if (!is.null(no_keep) & is.null(keep)) {
 
   for (level in no_keep) {
 
-    SE <- SE[rowData(SE)[,group] != level,]
+    SE_temp <- SE[rowData(SE)[,group] != level,]
     SE_F <- rbind(SE,SE_F)
 
   }
