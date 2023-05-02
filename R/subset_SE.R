@@ -72,7 +72,7 @@ SE_Final <- SummarizedExperiment(assay=temp_assay,
                                rowData = temp_rowdata,
                                metadata = list())
 
-names(assays(SE_F)) <- "exprs"
+names(assays(SE_Final)) <- "exprs"
 
 
 if (!is.null(keep) & !is.null(no_keep)) {
