@@ -68,7 +68,7 @@ temp_rowdata <-  data.frame(matrix(nrow=0, ncol = ncol(rowData(SE))))
 colnames(temp_rowdata) <- colnames(rowData(SE))
 
 
-SE_F <- SummarizedExperiment(assay=temp_assay,
+SE_Final <- SummarizedExperiment(assay=temp_assay,
                                rowData = temp_rowdata,
                                metadata = list())
 
@@ -80,14 +80,14 @@ if (!is.null(keep) & !is.null(no_keep)) {
   for (level in no_keep) {
 
     SE_temp <- SE[rowData(SE)[,group] != level,]
-    SE_Final <- rbind(SE,SE_F)
+    SE_Final <- rbind(SE_Final,SE_temp)
 
   }
 
   for (level in keep) {
 
     SE_temp <- SE[rowData(SE)[,group] == level,]
-    SE_F <- rbind(SE,SE_F)
+    SE_Final<- rbind(SE_Final,SE_temp)
 
   }
 
@@ -99,7 +99,7 @@ if (!is.null(no_keep) & is.null(keep)) {
   for (level in no_keep) {
 
     SE_temp <- SE[rowData(SE)[,group] != level,]
-    SE_F <- rbind(SE,SE_F)
+    SE_Final <- rbind(SE_final,SE_temp)
 
   }
 }
@@ -110,7 +110,7 @@ if (!is.null(keep) & is.null(no_keep)) {
   for (level in keep) {
 
     SE_temp <- SE[rowData(SE)[,group] == level,]
-    SE_F <- rbind(SE_F,SE_temp)
+    SE_Final<- rbind(SE_Final,SE_temp)
 
   }
 }
@@ -118,41 +118,41 @@ if (!is.null(keep) & is.null(no_keep)) {
 
 #drop unused levels
 
-factor_cols <- colnames(rowData(SE_F)[,sapply(rowData(SE_F), is.factor)])
+factor_cols <- colnames(rowData(SE_Final)[,sapply(rowData(SE_Final), is.factor)])
 
 for (cols in factor_cols) {
 
-  rowData(SE_F)[,cols] <- droplevels(rowData(SE_F)[,cols])
+  rowData(SE_Final)[,cols] <- droplevels(rowData(SE_Final)[,cols])
 
-  levels(rowData(SE_F)[,cols])
+  levels(rowData(SE_Final)[,cols])
 }
 
 
 
 #metadata
 
-experiment_info <- metadata(SE)$experiment_info[metadata(SE)$experiment_info$sample_id %in% levels(rowData(SE_F)$sample_id),]
+experiment_info <- metadata(SE)$experiment_info[metadata(SE)$experiment_info$sample_id %in% levels(rowData(SE_Final)$sample_id),]
 
-num_cells <- metadata(SE)$n_cells[names(metadata(SE)$n_cells) %in% levels(rowData(SE_F)$sample_id)]
+num_cells <- metadata(SE)$n_cells[names(metadata(SE)$n_cells) %in% levels(rowData(SE_Final)$sample_id)]
 
 
 # Reconstruct SE
 
 
-SE_F <- SummarizedExperiment(assay = assay(SE_F),
-                            rowData = rowData(SE_F),
-                            colData = colData(SE_F),
+SE_Final <- SummarizedExperiment(assay = assay(SE_Final),
+                            rowData = rowData(SE_Final),
+                            colData = colData(SE_Final),
                             metadata = list(
                               experiment_info = experiment_info,
                               n_cells = num_cells))
 
-names(assays(SE_F)) <- "exprs"
+names(assays(SE_Final)) <- "exprs"
 
 if(!is.null(output_folder)) {
-  saveRDS(SE_F, file.path(output_folder, paste0(SE_name, "_SE.rds")))
+  saveRDS(SE_Final, file.path(output_folder, paste0(SE_name, "_SE.rds")))
 }
 
-return(SE_F)
+return(SE_Final)
 
 
 }
