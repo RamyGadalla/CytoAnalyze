@@ -49,6 +49,10 @@ if(!is.factor(rowData(SE)[,group])) {
 }
 
 
+if(is.null(no_keep) & is.null(keep) & !rm_na){
+  stop("no parameters provided to subset.")
+}
+
 
 if (rm_na) {
   SE <- SE[!is.na(rowData(SE)[,group]),]
