@@ -1,4 +1,4 @@
-#' Subsetting SummarizedExperiment
+#' Subsetting SummarizedExperiment for CytoAnalyze
 #'
 #' @description Subsets SummarizedExperiment object for CytoAnalyze analysis pipeline.
 #'
@@ -13,7 +13,7 @@
 #' @return
 #' SummarizedExperiment
 #'
-#'
+#' @import SummarizedExperiment
 #'
 #' @export
 #'
