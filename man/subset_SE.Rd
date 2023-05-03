@@ -2,15 +2,15 @@
 % Please edit documentation in R/subset_SE.R
 \name{subset_SE}
 \alias{subset_SE}
-\title{Subsetting SummarizedExperiment}
+\title{Subsetting SummarizedExperiment for CytoAnalyze}
 \usage{
 subset_SE(
   SE,
   group,
   no_keep = NULL,
   keep = NULL,
-  output_folder,
-  SE_name,
+  output_folder = NULL,
+  SE_name = NULL,
   rm_na = TRUE
 )
 }
