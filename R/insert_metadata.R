@@ -37,7 +37,7 @@ if (!is(SE, "SummarizedExperiment")) {
 meta <- read.csv(meta)
 
 if (!matching_column %in% colnames(meta) | !matching_column %in% colnames(rowData(SE))) {
-  stop("matching_column needs to be in both meta and rowData().")
+  stop("matching_column needs to be in both meta and rowData(SE).")
 }
 
 
