@@ -23,8 +23,8 @@ subset_SE <- function (SE,
                        group,
                        no_keep = NULL,
                        keep = NULL,
-                       output_folder,
-                       SE_name,
+                       output_folder = NULL,
+                       SE_name =NULL,
                        rm_na=TRUE) {
 
 
@@ -56,15 +56,51 @@ subset_SE <- function (SE,
   }
 
 
-  if (rm_na) {
-    SE <- SE[!is.na(rowData(SE)[,group]),]
-  }
+  if (rm_na & is.null(no_keep) & is.null(keep)) {
+    # if only removing NAs is the goal
+
+    SE_Final <- SE[!is.na(rowData(SE)[,group]),]
+
+    # drop unused levels
+    rowData(SE_Final)[] <- lapply(rowData(SE_Final), function(x) if(is.factor(x)) droplevels(x) else x)
+
+    # metadata slot cleaning
+    experiment_info <- metadata(SE)$experiment_info[metadata(SE)$experiment_info$sample_id %in% levels(rowData(SE_Final)$sample_id),]
+
+    num_cells <- metadata(SE)$n_cells[names(metadata(SE)$n_cells) %in% levels(rowData(SE_Final)$sample_id)]
+
+    # Reconstruct SE
+
+    SE_Final <- SummarizedExperiment(assay = assay(SE_Final),
+                                     rowData = rowData(SE_Final),
+                                     colData = colData(SE_Final),
+                                     metadata = list(
+                                     experiment_info = experiment_info,
+                                     n_cells = num_cells))
 
 
-  # build empty SE with slot names as input SE
+    names(assays(SE_Final)) <- "exprs"
 
+    # Drop unused levels in the metadata of the new SE object (just in case)
+    metadata(SE_Final)$experiment_info[] <- lapply(metadata(SE_Final)$experiment_info, function(x) if(is.factor(x)) droplevels(x) else x)
+
+    if(!is.null(output_folder)) {
+      if(is.null(SE_name)){
+        stop("output_folder is provided but not SE_name.")
+      }
+      saveRDS(SE_Final, file.path(output_folder, paste0(SE_name, "_SE.rds")))
+    }
+
+
+    return(SE_Final)
+
+  } else {
+
+  # Removing NAs from column of interest.
+  SE <- SE[!is.na(rowData(SE)[,group]),]
+
+  # build empty SE_Final with same slot names as input SE to store the subsetted data in.
   temp_assay <- matrix(0, nrow = 0, ncol = ncol(assay(SE)))
-  colnames(temp_assay) <- colnames (assay(SE))
 
   temp_rowdata <-  data.frame(matrix(nrow=0, ncol = ncol(rowData(SE))))
   colnames(temp_rowdata) <- colnames(rowData(SE))
@@ -75,8 +111,10 @@ subset_SE <- function (SE,
                                    metadata = list())
 
   names(assays(SE_Final)) <- "exprs"
+  colnames(SE_Final) <- colnames(SE)
 
-
+# Subsetting
+  ## OR
   if (!is.null(keep) & !is.null(no_keep)) {
 
     for (level in no_keep) {
@@ -95,18 +133,18 @@ subset_SE <- function (SE,
 
   }
 
-
+ ## OR
   if (!is.null(no_keep) & is.null(keep)) {
 
     for (level in no_keep) {
 
       SE_temp <- SE[rowData(SE)[,group] != level,]
-      SE_Final <- rbind(SE_final,SE_temp)
+      SE_Final <- rbind(SE_Final,SE_temp)
 
     }
   }
 
-
+## OR
   if (!is.null(keep) & is.null(no_keep)) {
 
     for (level in keep) {
@@ -118,7 +156,7 @@ subset_SE <- function (SE,
   }
 
 
-  #drop unused levels
+  # drop unused levels
 
   factor_cols <- colnames(rowData(SE_Final)[,sapply(rowData(SE_Final), is.factor)])
 
@@ -131,7 +169,7 @@ subset_SE <- function (SE,
 
 
 
-  #metadata
+  # metadata cleaning
 
   experiment_info <- metadata(SE)$experiment_info[metadata(SE)$experiment_info$sample_id %in% levels(rowData(SE_Final)$sample_id),]
 
@@ -150,13 +188,20 @@ subset_SE <- function (SE,
 
 
   names(assays(SE_Final)) <- "exprs"
-  rownames(metadata(SE_Final)$experiment_info) <- as.character(c(1:nrow(metadata(SE_Final)$experiment_info)))
 
+  # Drop unused levels in the metadata of the new SE object (just in case)
+  metadata(SE_Final)$experiment_info[] <- lapply(metadata(SE_Final)$experiment_info, function(x) if(is.factor(x)) droplevels(x) else x)
+
+  # Save
   if(!is.null(output_folder)) {
+    if(is.null(SE_name)){
+      stop("output_folder is provided but not SE_name.")
+    }
     saveRDS(SE_Final, file.path(output_folder, paste0(SE_name, "_SE.rds")))
   }
 
   return(SE_Final)
 
+  }
 }
 
