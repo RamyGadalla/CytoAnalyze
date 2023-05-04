@@ -1,9 +1,11 @@
 #' Merge clusters of single-cell cytometry data
 #'
-#' @param SE         SummarizedExperiment object or path to SummarizedExperiment object.
-#' @param clusters   Integer vector of the clusters that needs to be merged. All th clusters will be merged in the first cluster in the vector.
-#'                   c(5,8,23), cluster 8 and 23 will be merged in cluster 5.
-#' @param reassign   Logical. If TRUE, the cluster IDs are reassigned new IDs starting from 1.
+#' @param SE                 SummarizedExperiment object or path to SummarizedExperiment object.
+#' @param clusters           Vector of the cluster IDs that needs to be merged. All th clusters will be merged in the first cluster in the vector.
+#'                           c(5,8,23), cluster 8 and 23 will be merged in cluster 5.
+#' @param reassign           Logical. If TRUE, the cluster IDs are reassigned new IDs starting from 1.
+#' @param output_folder      Path of output directory to receive the subsetted SummarizedExperiment.
+#' @param SE_name            Name of the new subsetted SummarizedExperiment.
 #'
 #' @return
 #' SummarizedExperiment object with the chosen clusters merged.
@@ -14,9 +16,13 @@
 #' @export
 #'
 #'
+#'
+#'
 cluster_merge <- function (SE,
                            clusters,
-                           reassign = TRUE) {
+                           reassign = TRUE,
+                           output_folder = NULL,
+                           SE_name = NULL) {
 
 
   if (is.character(SE)){
@@ -40,9 +46,18 @@ cluster_merge <- function (SE,
 
   rowData(SE)$cluster_id <- droplevels(rowData(SE)$cluster_id)
 
+  # reassign
   if (reassign) {
 
     levels(rowData(SE)$cluster_id) <- as.factor(1:length(levels(rowData(SE)$cluster_id)))
+  }
+
+  # Save
+  if(!is.null(output_folder)) {
+    if(is.null(SE_name)){
+      stop("output_folder is provided but not SE_name.")
+    }
+    saveRDS(SE, file.path(output_folder, paste0(SE_name, "_SE.rds")))
   }
 
   return(SE)
