@@ -3,6 +3,7 @@
 export(DDDsample)
 export(arcsin_trans)
 export(build_SE)
+export(cluster_drop)
 export(cluster_merge)
 export(cyto_clust_abundance)
 export(cyto_clust_colsPie)

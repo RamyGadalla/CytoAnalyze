@@ -1,6 +1,18 @@
-# drop clusters
-
-drop_clusters <- function(SE,
+#' Drop clusters of single cell cytometry data
+#'
+#' @description Remove specific clusters from SummarizedExperiment object
+#'
+#' @param SE               SummarizedExperiment object or path to SummarizedExperiment object.
+#' @param clusters         Vector of the cluster IDs that needs to be removed.
+#' @param reassign         Logical. If TRUE, the cluster IDs are reassigned new IDs starting from 1.
+#' @param output_folder    Path of output directory to receive the subsetted SummarizedExperiment.
+#' @param SE_name          Name of the new subsetted SummarizedExperiment.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+cluster_drop <- function(SE,
                           clusters,
                           reassign = FALSE,
                           output_folder = NULL,
