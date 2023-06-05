@@ -5,6 +5,7 @@
 #' @param add_column           Character vector of any length. It represents the column names of the new columns to be inserted.
 #' @param meta_column          Character vector of the same length as \code{add_column} of the names of the columns in \code{meta} that will be inserted.
 #' @param matching_column      Character vector of length 1. It represents an existing matching column in \code{meta} and \code{rowData()}
+#' @param fix_metadata         Logical. If TRUE (default), the column gets added to \code{metadata} slot as well.
 #' @param output_folder        Path of output directory to recieve the subsetted SummarizedExperiment.
 #' @param SE_name              Name of the new subsetted SummarizedExperiment.
 #'
@@ -22,6 +23,7 @@ insert_metadata <- function (SE,
                       add_column,
                       meta_column,
                       matching_column,
+                      fix_metadata = TRUE,
                       output_folder = NULL,
                       SE_name = NULL) {
 
@@ -52,10 +54,13 @@ rowData(SE)[[add_column[[i]]]] <- as.factor(meta[[meta_column[[i]]]][match(rowDa
 
 # metadata
 # experiment_info
+if (fix_metadata) {
+
 for (i in 1:length(add_column)){
 
   metadata(SE)$experiment_info[[add_column[[i]]]] <- as.factor(meta[[meta_column[[i]]]][match(metadata(SE)$experiment_info[[matching_column]], meta[[matching_column]])])
 
+  }
 }
 
 if(!is.null(output_folder)) {
