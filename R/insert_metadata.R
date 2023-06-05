@@ -56,11 +56,11 @@ rowData(SE)[[add_column[[i]]]] <- as.factor(meta[[meta_column[[i]]]][match(rowDa
 # experiment_info
 if (fix_metadata) {
 
-for (i in 1:length(add_column)){
+  for (i in 1:length(add_column)){
 
-  metadata(SE)$experiment_info[[add_column[[i]]]] <- as.factor(meta[[meta_column[[i]]]][match(metadata(SE)$experiment_info[[matching_column]], meta[[matching_column]])])
+    metadata(SE)$experiment_info[[add_column[[i]]]] <- as.factor(meta[[meta_column[[i]]]][match(metadata(SE)$experiment_info[[matching_column]], meta[[matching_column]])])
 
-  }
+   }
 }
 
 if(!is.null(output_folder)) {
