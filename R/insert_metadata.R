@@ -62,7 +62,7 @@ if(!is.null(output_folder)) {
   if(is.null(SE_name)){
     stop("output_folder is provided but not SE_name.")
   }
-  saveRDS(SE_Final, file.path(output_folder, paste0(SE_name, cat(add_column, sep = "_"), "_SE.rds")))
+  saveRDS(SE, file.path(output_folder, paste0(SE_name, cat(add_column, sep = "_"), "_SE.rds")))
 }
 
 return(SE)
