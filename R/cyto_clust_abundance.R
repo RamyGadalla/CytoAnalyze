@@ -80,7 +80,7 @@ cyto_clust_abundance <- function(SE,
     labs(title = "Clusters Differential Abundance - log fold change", subtitle = paste(contrast[1], "vs", contrast[2]), x = "cluster id") +
     theme(plot.title = element_text(hjust = 0.5), panel.grid = element_blank(), plot.background = element_rect(color = "white"),
           panel.background = element_blank(), axis.line.x = element_line(color = "black"), axis.line.y = element_line(color = "black"),
-          axis.text.x = element_text(size=10, angle = 45),
+          axis.text.x = element_text(size=10, angle = 45, hjust=1),
           plot.subtitle = element_text(hjust = 0.5), plot.margin = margin(1,2,1,2, "cm")) +
     geom_text(aes(label = ifelse(.data$p_adj < 0.05, "*", "")), size=8)
 
