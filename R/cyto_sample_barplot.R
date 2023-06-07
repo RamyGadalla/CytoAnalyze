@@ -4,7 +4,8 @@
 #' @description Plot a stacked columns plot for the proportion of clusters in each sample in clustered cytometry data.
 #'
 #' @param SE               \code{SummarizedExperiment} object or path to \code{SummarizedExperiment} object.
-#' @param samples           Character. It must be in \code{colnames} \code{(rowData())}, indicates the sample name/ID.
+#' @param samples          Character. It must be in \code{colnames} \code{(rowData())}, indicates the sample name/ID.
+#' @param reorder          A variable in the dataframe to use to rearrange levels of "samples" for visualization.
 #' @param output_folder    Path to folder to receive pdf file of the columns plot.
 #'
 #' @return
@@ -27,6 +28,7 @@
 #'
 cyto_samples_barplot <- function (SE,
                                  samples = "sample_id",
+                                 reorder = NULL,
                                  output_folder = ".") {
 
 
@@ -42,6 +44,12 @@ cyto_samples_barplot <- function (SE,
 
   dir.create(file.path(output_folder, "Tables"), showWarnings = FALSE)
   df_for_plotting <- as.data.frame(rowData(SE))
+
+
+  if (!is.null(reorder)) {
+    df_for_plotting$patient_id <- factor(df_for_plotting[,samples], levels = unique(df_for_plotting$patient_id[order(df_for_plotting[,reorder])]))
+
+  }
 
   # counting cells per group - cluster_id combination
 
@@ -63,6 +71,8 @@ cyto_samples_barplot <- function (SE,
   set.seed(NULL)
 
   message("Generating samples-cluster proportions barplot...")
+
+
 
   p <- ggplot(df, aes(y=.data$cluster_percent, x=!!sym(samples))) +
     geom_col(aes(fill=.data$cluster_id), position = "fill") +
