@@ -47,7 +47,7 @@ cyto_samples_barplot <- function (SE,
 
 
   if (!is.null(reorder)) {
-    df_for_plotting$patient_id <- factor(df_for_plotting[,samples], levels = unique(df_for_plotting$patient_id[order(df_for_plotting[,reorder])]))
+    df_for_plotting$patient_id <- factor(df_for_plotting[,samples], levels = unique(df_for_plotting$reorder[order(df_for_plotting[,reorder])]))
 
   }
 
