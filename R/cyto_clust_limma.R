@@ -1,7 +1,7 @@
 #' Differential expression of biomarkers for clustered single-cell cytometry data using limma
 #'
 #'
-#' @description  Performs differential expression analysis to clustered cytometry data using limma.
+#' @description  Performs differential expression analysis to clustered cytometry data using limma (markers labelled as state in colData()).
 #'
 #'
 #' @param SE                 \code{SummarizedExperiment} object or path to \code{SummarizedExperiment} object.
