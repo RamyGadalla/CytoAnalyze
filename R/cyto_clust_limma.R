@@ -63,7 +63,8 @@ d_counts_SE <- diffcyt::calcCounts(SE)
 rownames(colData(SE)) <- colData(SE)$marker_name
 
 d_medians_SE <- diffcyt::calcMedians(SE)
-marker_flag <-  metadata(d_medians_SE)$id_state_markers | metadata(d_medians_SE)$id_type_markers
+#marker_flag <-  metadata(d_medians_SE)$id_state_markers | metadata(d_medians_SE)$id_type_markers
+marker_flag <-  metadata(d_medians_SE)$id_state_markers
 
 res_DS <- diffcyt::testDS_limma(d_counts_SE, d_medians_SE,
                        design_matrix, contrast_matrix, plot=FALSE, markers_to_test = marker_flag,
