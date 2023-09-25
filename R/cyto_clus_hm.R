@@ -7,6 +7,7 @@
 #' @param output_folder   Path to folder to recieve pdf file of the heatmap.
 #' @param assay_name      Name of \code{assay()} slot to be used in generating the heatmap.
 #' @param markers         A numeric vector specifying the indices of markers to be plotted. By default, it plots all the markers that are not labelled as "none" in "marker_class" column in \code{colData(SE)}.
+#'                        Specfic maker can be specified using \code{which(colData(SE)$marker_class == "type")}
 #' @param ...             Extra arguments for \code{pheatmap()}
 #'
 #' @return Heatmap clusters as rows and median protein expression as column.
