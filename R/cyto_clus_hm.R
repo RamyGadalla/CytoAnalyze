@@ -6,6 +6,7 @@
 #' @param SE              \code{SummarizedExperiment} object or path to \code{SummarizedExperiment} object.
 #' @param output_folder   Path to folder to recieve pdf file of the heatmap.
 #' @param assay_name      Name of \code{assay()} slot to be used in generating the heatmap.
+#' @param markers         A character vector of marker names to be plotted. By default, it plots all the markers that are not labelled as "none" in "marker_class" column in \code{colData(SE)}.
 #' @param ...             Extra arguments for \code{pheatmap()}
 #'
 #' @return Heatmap clusters as rows and median protein expression as column.
@@ -25,6 +26,7 @@
 cyto_clust_hm <- function (SE,
                           output_folder = ".",
                           assay_name = "exprs",
+                          markers = "All",
                           ...) {
 
   if (is.character(SE)) {
@@ -39,6 +41,13 @@ cyto_clust_hm <- function (SE,
   dir.create(file.path(output_folder, "Tables"), showWarnings = FALSE)
 
   #building data frame
+
+  if (markers == "All") {
+    marker_flag <- which(colData(SE)$marker_class != "none")
+  } else {
+    marker_flag <- markers
+  }
+
   marker_flag <- which(colData(SE)$marker_class != "none")
   cluster_names <- levels(rowData(SE)$cluster_id)
   df <- data.frame(matrix(ncol=length(marker_flag), nrow=length(cluster_names)))
