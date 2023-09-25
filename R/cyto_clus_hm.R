@@ -26,7 +26,7 @@
 cyto_clust_hm <- function (SE,
                           output_folder = ".",
                           assay_name = "exprs",
-                          markers = "All",
+                          markers = NA,
                           ...) {
 
   if (is.character(SE)) {
@@ -42,13 +42,14 @@ cyto_clust_hm <- function (SE,
 
   #building data frame
 
-  if (any(markers == "All")) {
+  if (is.na(markers)) {
     marker_flag <- which(colData(SE)$marker_class != "none")
-  } else {
+  } else if (!is.na(markers)) {
+   stopifnot(markers %in% colnames(SE))
     marker_flag <- markers
   }
 
-  marker_flag <- which(colData(SE)$marker_class != "none")
+
   cluster_names <- levels(rowData(SE)$cluster_id)
   df <- data.frame(matrix(ncol=length(marker_flag), nrow=length(cluster_names)))
   colnames(df) <- colnames(SE)[marker_flag]
