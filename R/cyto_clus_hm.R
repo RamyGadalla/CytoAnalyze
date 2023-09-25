@@ -42,7 +42,7 @@ cyto_clust_hm <- function (SE,
 
   #building data frame
 
-  if (markers == "All") {
+  if (any(markers == "All")) {
     marker_flag <- which(colData(SE)$marker_class != "none")
   } else {
     marker_flag <- markers
