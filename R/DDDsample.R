@@ -151,7 +151,7 @@ DDDsample <- function(input_folder,
         suppressWarnings(
           spade::SPADE.downsampleFCS(infilename = file,
                                      outfilename = file.path(output_folder, "downsample_output", paste0(tools::file_path_sans_ext(basename(file)),"_DDDsampled.fcs")),
-                                     exclude_pctile = 0.01,
+                                     exclude_pctile = 0,
                                      target_pctile = NULL,
                                      target_percent = NULL,
                                      target_number = number_events_keep)
