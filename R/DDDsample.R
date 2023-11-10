@@ -139,7 +139,7 @@ DDDsample <- function(input_folder,
   }
 
 
-  if (is.numeric(number_events_keep))
+  if (is.numeric(number_events_keep)) {
 
     for (file in fcs_files) {
 
@@ -162,8 +162,9 @@ DDDsample <- function(input_folder,
         message("skipping down-sampling...", file)
         flowCore::write.FCS(temp, file.path(output_folder,  "downsample_output", paste0(tools::file_path_sans_ext(basename(file)),"_DDDsampled.fcs")))
       }
-
     }
+
+  }
 
 
   fcs_files <- list.files(path = file.path(output_folder,"downsample_output"),
