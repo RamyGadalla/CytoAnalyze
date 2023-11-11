@@ -16,6 +16,8 @@
 #' @param ydim                    The y-dimension size of the SOM. See \code{\link[cyCombine]{batch_correct}}.
 #' @param k                       Integer. k paramter for phenograph clustering. See \code{\link{k_sweep}}
 #' @param n                       Integer. The size of local neighborhood (n_neigbors paramter of UMAP). See \code{\link[umap]{umap}}
+#' @param umap_method             If set to \code{umap-learn}, python umap-learn module will be used via reticulate. If \code{NULL}, R implementation of umap is used. \code{umap-learn} is recommended for large data sets.
+#' @param conda_env        Path to conda environment that contain umap module. IT can be create through conda install. Please check \href{https://anaconda.org/conda-forge/umap-learn}.
 #' @param assay_name              A single character vector indicates the assay to be used in plotting the UMAP. By default, it is \code{exprs}.
 #' @param plot_clusters           Logical. If TRUE, \code{\link{cyto_umap}} is called to plot phenograph clusters on umap axes.
 #' @param DS                      Integer. Specifies the number of cell to downsample to for the umap plots. If groups are provided, this number will be used to downsample from each group.
@@ -63,6 +65,8 @@ cyto_workflow <- function (input_folder,
                            ydim = 8,
                            k = 30,
                            n = 15,
+                           umap_method = NULL,
+                           conda_env = NULL,
                            assay_name = "exprs",
                            plot_clusters = TRUE,
                            DS = 5000,
@@ -253,6 +257,8 @@ if (!is.null(input_folder)) {
                               marker_info = marker_info,
                               k = k,
                               n = n,
+                              umap_method = umap_method,
+                              conda_env = conda_env,
                               output_folder = output_folder,
                               export = TRUE,
                               assay_name = assay_name)
