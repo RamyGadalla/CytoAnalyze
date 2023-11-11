@@ -9,7 +9,7 @@
 #' @param export           If \code{TRUE}, \code{SummarizedExperiment} object is exported and saved in the specified destination.
 #' @param output_folder    Destination folder to recieve the outcome. Working directory is the default.
 #' @param assay_name       Single character vector of the name of the \code{assay()} slot to be used in clustering.
-#' @param umap_method      If set to \code{umap-learn}, python umap-learn module will be used via reticulate.
+#' @param umap_method      If set to \code{umap-learn}, python umap-learn module will be used via reticulate. If \code{NULL}, R implementation of umap is used. \code{umap-learn} is recommended for large datasets.
 #' @param conda_env        Path to conda environment that contain umap module. IT can be create through conda install. Please check \href{https://anaconda.org/conda-forge/umap-learn}.
 #' @param ...              Additional arguments to \code{\link[Rphenograph]{Rphenograph}} and \code{\link[umap]{umap}}.
 #'
@@ -85,7 +85,7 @@ pheno_umap <- function(SE,
       if (!reticulate::py_module_available('scipy')) {
         stop("scipy module not found. Please intall it through conda install")
       }
-
+      reticulate::import("umap")
       umap <- umap(expr_mat, config = umap.defaults, method="umap-learn", verbose=TRUE)
 
     } else {
