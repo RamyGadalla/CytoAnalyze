@@ -9,6 +9,8 @@
 #' @param export           If \code{TRUE}, \code{SummarizedExperiment} object is exported and saved in the specified destination.
 #' @param output_folder    Destination folder to recieve the outcome. Working directory is the default.
 #' @param assay_name       Single character vector of the name of the \code{assay()} slot to be used in clustering.
+#' @param umap_method      If set to \code{umap-learn}, python umap-learn module will be used via reticulate.
+#' @param conda_env        Path to conda environment that contain umap module. IT can be create through conda install. Please check \href{https://anaconda.org/conda-forge/umap-learn}.
 #' @param ...              Additional arguments to \code{\link[Rphenograph]{Rphenograph}} and \code{\link[umap]{umap}}.
 #'
 #' @return  SummarizedExperiment object with a cluster_ID column and UMAP coordinates added. Data can be accessed through the \code{rowData()} accessor.
