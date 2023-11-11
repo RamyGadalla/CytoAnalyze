@@ -48,6 +48,7 @@ Imports: spade,
          limma, 
          MatrixGenerics, 
          ggridges,
+         reticulate,
          flowCore, 
          methods
 Depends: R (>= 4.2.0)
