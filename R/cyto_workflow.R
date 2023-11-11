@@ -244,6 +244,7 @@ if (!is.null(input_folder)) {
   if (all(c("UMAP1", "UMAP2", "cluster_id") %in% colnames(rowData(SE)))) {
     message("SummarizedExperiment object already contains clustering and dimensionality reduction information that will be used.")
     message("\033[31mSkipping PhenoGraph and UMAP!\033[0m")
+    SE_pheno_umap <- SE
   } else {
   message("Cellular clustering and dimensionality reduction...")
   SE_pheno_umap <- pheno_umap(SE,
