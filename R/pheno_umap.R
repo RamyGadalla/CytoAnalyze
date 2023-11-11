@@ -62,6 +62,7 @@ pheno_umap <- function(SE,
 
     ## Phenograph clustering
     #Assigin each cells to a cluster ID
+    message("PhenoGraph initiated ")
     pheno <- Rphenograph::Rphenograph(expr_mat, k)
 
     #Add new column of cluster IDs to the data.
@@ -86,6 +87,7 @@ pheno_umap <- function(SE,
         stop("scipy module not found. Please intall it through conda install")
       }
       reticulate::import("umap")
+      message("umap-learn initiated..")
       umap <- umap(expr_mat, config = umap.defaults, method="umap-learn", verbose=TRUE)
 
     } else {
