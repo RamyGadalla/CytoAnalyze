@@ -21,6 +21,7 @@
 #' @importFrom methods is
 #' @import umap
 #' @import Rphenograph
+#' @import reticulate
 #'
 #' @export
 
@@ -32,6 +33,8 @@ pheno_umap <- function(SE,
                        n=15,
                        export=FALSE,
                        output_folder= ".",
+                       umap_method =NULL,
+                       conda_env=NULL,
                        assay_name = "exprs",
                        ...) {
 
@@ -43,6 +46,7 @@ pheno_umap <- function(SE,
   if(is.character(marker_info)) {
   marker_info <- suppressWarnings(read.csv(marker_info))
   }
+
 
   if (is.character(SE)) {
     SE <- readRDS(SE)
@@ -65,8 +69,27 @@ pheno_umap <- function(SE,
     #UMAP configurations
     umap.defaults$n_neighbors <- n
 
-    #run umap
-    umap <- umap::umap (expr_mat, config= umap.defaults, verbose = TRUE)
+    if (umap_method == "umap-learn") {
+
+      if (!basename(conda_env) %in% conda_list()$name){
+        stop("Path provided is not conda enviroment. Please install conda environment (e.g conda create env)")
+      }
+
+      reticulate::use_condaenv(conda_env)
+
+      if (!reticulate::py_module_available('umap')) {
+        stop("umap module not found. Please intall it through conda install")
+      }
+      if (!reticulate::py_module_available('scipy')) {
+        stop("scipy module not found. Please intall it through conda install")
+      }
+
+      umap <- umap(expr_mat, config = umap.defaults, method="umap-learn", verbose=TRUE)
+
+    } else {
+      umap <- umap::umap (expr_mat, config= umap.defaults, verbose = TRUE)
+    }
+
 
     #Add the reduced two dimensions to the data
     rowData(SE)$UMAP1 <- umap$layout[,1]
