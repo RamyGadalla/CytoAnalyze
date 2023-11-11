@@ -73,7 +73,7 @@ pheno_umap <- function(SE,
 
     if (umap_method == "umap-learn") {
 
-      if (!basename(conda_env) %in% conda_list()$name){
+      if (!basename(conda_env) %in% reticulate::conda_list()$name){
         stop("Path provided is not conda enviroment. Please install conda environment (e.g conda create env)")
       }
 
