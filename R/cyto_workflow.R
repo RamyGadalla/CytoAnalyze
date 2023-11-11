@@ -45,6 +45,7 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr %>%
 #'
+#'
 #' @return
 #' A variety of R objects, tables and figures for cytometry data analysis exported to 'output_folder'.
 #'
@@ -105,6 +106,7 @@ cyto_workflow <- function (input_folder,
   if (!is.null(SE) & !is.null(input_folder)){
     stop("The function can take only one argument either SE or input_folder.")
   }
+
 
   set.seed(seed)
 
@@ -255,7 +257,6 @@ if (!is.null(input_folder)) {
                               export = TRUE,
                               assay_name = assay_name)
   }
-
   # visualizations
 
 errors <- c()

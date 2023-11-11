@@ -47,7 +47,7 @@ Imports: spade,
          rlang, 
          limma, 
          MatrixGenerics, 
-         ggridges, 
+         ggridges,
          flowCore, 
          methods
 Depends: R (>= 4.2.0)
