@@ -50,11 +50,6 @@ The second folder contains the downsampled fcs files.
 Downsample individual fcs files based on calculating local density for each single cell.
 For more details, see \code{\link[spade]{SPADE.addDensityToFCS}}.
 }
-\details{
-If \code{number_events_keep} is chosen to downsample individual files to a certain number of cells, files with cell count below, equal or 500 more than the value provided
-will be skipped, and files with cell count. Files above the value provided + 500 will be downsampled to the provided value. The 500 added is just to make sure the script find enough cells
-to downsample from after \code{density_to_exclude} remove cells.
-}
 \note{
 For more information; see \href{https://www.rdocumentation.org/packages/spade/versions/1.20.0}{spade}
 }

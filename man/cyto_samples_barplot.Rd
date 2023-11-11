@@ -4,12 +4,19 @@
 \alias{cyto_samples_barplot}
 \title{Single cell cytometry data visualization}
 \usage{
-cyto_samples_barplot(SE, samples = "sample_id", output_folder = ".")
+cyto_samples_barplot(
+  SE,
+  samples = "sample_id",
+  reorder = NULL,
+  output_folder = "."
+)
 }
 \arguments{
 \item{SE}{\code{SummarizedExperiment} object or path to \code{SummarizedExperiment} object.}
 
 \item{samples}{Character. It must be in \code{colnames} \code{(rowData())}, indicates the sample name/ID.}
+
+\item{reorder}{A variable in the dataframe to use to rearrange levels of "samples" for visualization.}
 
 \item{output_folder}{Path to folder to receive pdf file of the columns plot.}
 }

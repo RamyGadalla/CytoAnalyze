@@ -10,6 +10,7 @@ insert_metadata(
   add_column,
   meta_column,
   matching_column,
+  fix_metadata = TRUE,
   output_folder = NULL,
   SE_name = NULL
 )
@@ -24,6 +25,8 @@ insert_metadata(
 \item{meta_column}{Character vector of the same length as \code{add_column} of the names of the columns in \code{meta} that will be inserted.}
 
 \item{matching_column}{Character vector of length 1. It represents an existing matching column in \code{meta} and \code{rowData()}}
+
+\item{fix_metadata}{Logical. If TRUE (default), the column gets added to \code{metadata} slot as well.}
 
 \item{output_folder}{Path of output directory to recieve the subsetted SummarizedExperiment.}
 

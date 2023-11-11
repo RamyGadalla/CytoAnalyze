@@ -11,6 +11,8 @@ pheno_umap(
   n = 15,
   export = FALSE,
   output_folder = ".",
+  umap_method = NULL,
+  conda_env = NULL,
   assay_name = "exprs",
   ...
 )
@@ -27,6 +29,10 @@ pheno_umap(
 \item{export}{If \code{TRUE}, \code{SummarizedExperiment} object is exported and saved in the specified destination.}
 
 \item{output_folder}{Destination folder to recieve the outcome. Working directory is the default.}
+
+\item{umap_method}{If set to \code{umap-learn}, python umap-learn module will be used via reticulate. If \code{NULL}, R implementation of umap is used. \code{umap-learn} is recommended for large data sets.}
+
+\item{conda_env}{Path to conda environment that contain umap module. IT can be create through conda install. Please check \href{https://anaconda.org/conda-forge/umap-learn}.}
 
 \item{assay_name}{Single character vector of the name of the \code{assay()} slot to be used in clustering.}
 

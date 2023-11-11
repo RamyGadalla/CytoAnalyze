@@ -30,7 +30,7 @@ cyto_clust_limma(
 A table (csv file) with log fold change and statistical values for the comparison between the two contrasting groups using limma.
 }
 \description{
-Performs differential expression analysis to clustered cytometry data using limma.
+Performs differential expression analysis to clustered cytometry data using limma (markers labelled as state in colData()).
 }
 \seealso{
 \href{https://bioconductor.org/packages/release/bioc/html/limma.html}{limma}.\href{https://github.com/lmweber/diffcyt}{diffcyt}

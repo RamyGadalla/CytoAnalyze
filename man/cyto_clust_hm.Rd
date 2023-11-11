@@ -4,7 +4,7 @@
 \alias{cyto_clust_hm}
 \title{Heatmap for clustered single-cell cytometry data}
 \usage{
-cyto_clust_hm(SE, output_folder = ".", assay_name = "exprs", ...)
+cyto_clust_hm(SE, output_folder = ".", assay_name = "exprs", markers = NA, ...)
 }
 \arguments{
 \item{SE}{\code{SummarizedExperiment} object or path to \code{SummarizedExperiment} object.}
@@ -12,6 +12,9 @@ cyto_clust_hm(SE, output_folder = ".", assay_name = "exprs", ...)
 \item{output_folder}{Path to folder to recieve pdf file of the heatmap.}
 
 \item{assay_name}{Name of \code{assay()} slot to be used in generating the heatmap.}
+
+\item{markers}{A numeric vector specifying the indices of markers to be plotted. By default, it plots all the markers that are not labelled as "none" in "marker_class" column in \code{colData(SE)}.
+Specfic maker can be specified using \code{which(colData(SE)$marker_class == "type")}}
 
 \item{...}{Extra arguments for \code{pheatmap()}}
 }

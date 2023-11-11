@@ -16,6 +16,8 @@ cyto_workflow(
   ydim = 8,
   k = 30,
   n = 15,
+  umap_method = NULL,
+  conda_env = NULL,
   assay_name = "exprs",
   plot_clusters = TRUE,
   DS = 5000,
@@ -63,6 +65,10 @@ define and evaluate markers that needs batch correction.}
 \item{k}{Integer. k paramter for phenograph clustering. See \code{\link{k_sweep}}}
 
 \item{n}{Integer. The size of local neighborhood (n_neigbors paramter of UMAP). See \code{\link[umap]{umap}}}
+
+\item{umap_method}{If set to \code{umap-learn}, python umap-learn module will be used via reticulate. If \code{NULL}, R implementation of umap is used. \code{umap-learn} is recommended for large data sets.}
+
+\item{conda_env}{Path to conda environment that contain umap module. IT can be create through conda install. Please check \href{https://anaconda.org/conda-forge/umap-learn}.}
 
 \item{assay_name}{A single character vector indicates the assay to be used in plotting the UMAP. By default, it is \code{exprs}.}
 
