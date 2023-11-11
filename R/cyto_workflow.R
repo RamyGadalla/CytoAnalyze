@@ -241,6 +241,10 @@ if (!is.null(input_folder)) {
 
   # Running Phenograph and UMAP
 
+  if (all(c("UMAP1", "UMAP2", "cluster_id") %in% colnames(rowData(SE)))) {
+    message("SummarizedExperiment object already contains clustering and dimensionality reduction information that will be used.")
+    message("\033[31mSkipping PhenoGraph and UMAP!\033[0m")
+  } else {
   message("Cellular clustering and dimensionality reduction...")
   SE_pheno_umap <- pheno_umap(SE,
                               marker_info = marker_info,
@@ -249,7 +253,7 @@ if (!is.null(input_folder)) {
                               output_folder = output_folder,
                               export = TRUE,
                               assay_name = assay_name)
-
+  }
 
   # visualizations
 

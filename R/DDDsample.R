@@ -21,9 +21,6 @@
 #'
 #' @note   For more information; see \href{https://www.rdocumentation.org/packages/spade/versions/1.20.0}{spade}
 #'
-#' @details If \code{number_events_keep} is chosen to downsample individual files to a certain number of cells, files with cell count below, equal or 500 more than the value provided
-#' will be skipped, and files with cell count. Files above the value provided + 500 will be downsampled to the provided value. The 500 added is just to make sure the script find enough cells
-#' to downsample from after \code{density_to_exclude} remove cells.
 #'
 #' @import spade tools
 #' @return Two folders; the first contains all the input fcs files with additional parameter added "density" added to the list of parameters.
