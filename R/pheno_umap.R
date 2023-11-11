@@ -63,7 +63,7 @@ pheno_umap <- function(SE,
     ## Phenograph clustering
     #Assigin each cells to a cluster ID
     message("PhenoGraph initiated...")
-    pheno <- Rphenograph::Rphenograph(expr_mat, k)
+    pheno <- Rphenograph::Rphenograph(expr_mat, k, verbose = TRUE)
 
     #Add new column of cluster IDs to the data.
     rowData(SE)$cluster_id <- as.factor(igraph::membership(pheno[[2]]))
