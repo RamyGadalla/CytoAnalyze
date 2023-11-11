@@ -145,7 +145,7 @@ DDDsample <- function(input_folder,
 
       temp <- flowCore::read.FCS(file, transformation = FALSE, truncate_max_range = FALSE)
 
-      if (nrow(temp) > number_events_keep+500) {
+      if (nrow(temp) > number_events_keep) {
 
         message("down-sampling...", file)
         suppressWarnings(
