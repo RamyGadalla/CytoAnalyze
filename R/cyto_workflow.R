@@ -345,6 +345,7 @@ tryCatch({
     if (plot_cluster_hm) {
 
     cyto_clust_hm(SE_pheno_umap,
+                  markers= which(colData(SE)$marker_class != "none"),
                   output_folder = output_folder)
 
   }},

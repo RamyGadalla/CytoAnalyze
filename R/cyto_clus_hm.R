@@ -49,6 +49,7 @@ cyto_clust_hm <- function (SE,
     marker_flag <- markers
   }
 
+  rownames(colData(SE)) <- colData(SE)$clean_name
 
   cluster_names <- levels(rowData(SE)$cluster_id)
   df <- data.frame(matrix(ncol=length(marker_flag), nrow=length(cluster_names)))
@@ -91,7 +92,7 @@ cyto_clust_hm <- function (SE,
   message("Generating heatmap plot...")
 
   pheatmap(t(df),
-                   scale = "column",
+                   scale = "row",
                    color =rev(brewer.pal(n = 7, name ="RdBu")),
                    border_color = "black",
                    cluster_rows=TRUE,
