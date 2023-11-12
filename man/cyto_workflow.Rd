@@ -116,3 +116,6 @@ A variety of R objects, tables and figures for cytometry data analysis exported 
 \description{
 This is a wrapper function around package 'Cytonalyze' to automate cytometry data analysis.
 }
+\details{
+If input SummarizedExperiment already include cluster ID and dimensions reduction information, it will be used, instead of re-running it again.
+}

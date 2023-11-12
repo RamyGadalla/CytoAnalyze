@@ -48,6 +48,8 @@
 #' @importFrom dplyr %>%
 #'
 #'
+#' @details If input SummarizedExperiment already include cluster ID and dimensions reduction information, it will be used, instead of re-running it again.
+#'
 #' @return
 #' A variety of R objects, tables and figures for cytometry data analysis exported to 'output_folder'.
 #'
