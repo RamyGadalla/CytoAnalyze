@@ -22,3 +22,5 @@ devtools::install_github("RamyGadalla/CytoAnalyze")
 ## Usage
 
 CytoAnalyze input is cleaned-up single cell cytometry data as .FCS files or SummarizedExperiment-class object. CytoAnalyze does not include data cleaning feature. The output of CytoAnalyze are a variety of visualization plots and tables with all the necessary values to explore and provide insight about the data set.
+
+[View Vignette](https://github.com/your-username/your-repo-name/blob/main/path/to/file.pdf)
